@@ -6,8 +6,7 @@ public class CalculatorTest {
 
     @Test
     public void calculatorTestAdd() {
-        Calculator calc = new Calculator();
-        Assert.assertEquals("Addition returned wrong result", 4, calc.add(2, 2));
+        Assert.assertEquals("Addition returned wrong result", 4, calculator.add(2, 2));
     }
 
     @Test
