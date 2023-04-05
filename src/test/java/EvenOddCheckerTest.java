@@ -6,12 +6,12 @@ public class EvenOddCheckerTest {
 
     @Test
     public void testEvenNumber() {
-        Assert.assertTrue(checker.check(4));
+        Assert.assertTrue(checker.check(2));
     }
 
     @Test
     public void testOddNumber() {
-        Assert.assertFalse(checker.check(7));
+        Assert.assertFalse(checker.check(3));
     }
 
     @Test
@@ -26,6 +26,6 @@ public class EvenOddCheckerTest {
 
     @Test
     public void testNegativeOddNumber() {
-        Assert.assertFalse(checker.check(-5));
+        Assert.assertFalse(checker.check(-1));
     }
 }
