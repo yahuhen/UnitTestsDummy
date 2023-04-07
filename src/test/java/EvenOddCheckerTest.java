@@ -17,5 +17,6 @@ public class EvenOddCheckerTest {
         Assert.assertFalse(evenOddChecker.check(2147483647));
         Assert.assertFalse(evenOddChecker.check(-2147483647));
         Assert.assertFalse(evenOddChecker.check(-1));
+
     }
 }
