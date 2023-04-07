@@ -40,5 +40,6 @@ public class RectangleTest {
         Assert.assertEquals(0, rectangleMax.getLength(), 0);
         rectangleMax.setLength(1.7E-308);
         Assert.assertEquals(1.7E-308, rectangleMax.getLength(), 0);
+
     }
 }
