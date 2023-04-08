@@ -95,10 +95,10 @@ public class CalculatorTests {
         Assert.assertEquals("Subtract returned wrong result", -1, myCalc.subtract(-1, 0));
     }
 
-    //    @Test
-//    public void multiplyTestPositivePositive(){
-//        Assert.assertEquals("Multiply returned wrong result",999999998000000000,myCalc.multiply(999999999,999999999));
-//    }
+        @Test
+    public void multiplyTestPositivePositive(){
+        Assert.assertEquals("Multiply returned wrong result",50,myCalc.multiply(5,10));
+    }
     @Test
     public void multiplyTestPositiveNegative() {
         Assert.assertEquals("Multiply returned wrong result", -4, myCalc.multiply(2, -2));
@@ -124,18 +124,18 @@ public class CalculatorTests {
         Assert.assertEquals("Multiply returned wrong result", 0, myCalc.multiply(0, -999999999));
     }
 
-    //    @Test
-//    public void multiplyTestNegativePositive(){
-//        Assert.assertEquals("Subtract returned wrong result",999999998000000000,myCalc.multiply(-999999999,999999999));
-//    }
-//    @Test
-//    public void multiplyTestNegativeNegative(){
-//        Assert.assertEquals("Subtract returned wrong result",999999998000000000,myCalc.multiply(-999999999,-999999999));
-//    }
-//    @Test
-//    public void multiplyTestNegativeZero(){
-//        Assert.assertEquals("Subtract returned wrong result",0,myCalc.multiply(-1,0));
-//    }
+        @Test
+    public void multiplyTestNegativePositive(){
+        Assert.assertEquals("Subtract returned wrong result",-2,myCalc.multiply(-1,2));
+    }
+    @Test
+    public void multiplyTestNegativeNegative(){
+        Assert.assertEquals("Subtract returned wrong result",4,myCalc.multiply(-2,-2));
+    }
+    @Test
+    public void multiplyTestNegativeZero(){
+        Assert.assertEquals("Subtract returned wrong result",0,myCalc.multiply(-1,0));
+    }
     @Test
     public void divideTestPositivePositive() {
         Assert.assertEquals("Divide returned wrong result", 1, myCalc.divide(999999999, 999999999));
@@ -146,19 +146,19 @@ public class CalculatorTests {
         Assert.assertEquals("Divide returned wrong result", -1, myCalc.divide(2, -2));
     }
 
-    //    @Test
-//    public void divideTestPositiveZero(){
-//        Assert.assertEquals("Divide returned wrong result",0,myCalc.divide(1,0));
-//    }
+        @Test(expected = ArithmeticException.class)
+    public void divideTestPositiveZero(){
+        myCalc.divide(1,0);
+    }
     @Test
     public void divideTestZeroPositive() {
         Assert.assertEquals("Divide returned wrong result", 0, myCalc.divide(0, 999999999));
     }
 
-    //    @Test
-//    public void divideTestZeroZero(){
-//        Assert.assertEquals("Divide returned wrong result",0,myCalc.divide(0,0));
-//    }
+        @Test(expected = ArithmeticException.class)
+    public void divideTestZeroZero(){
+        myCalc.divide(0,0);
+    }
     @Test
     public void divideTestZeroNegative() {
         Assert.assertEquals("Divide returned wrong result", 0, myCalc.divide(0, -999999999));
@@ -174,9 +174,9 @@ public class CalculatorTests {
         Assert.assertEquals("Divide returned wrong result", 1, myCalc.divide(-999999999, -999999999));
     }
 
-    //    @Test
-//    public void divideTestNegativeZero(){
-//        Assert.assertEquals("Divide returned wrong result",0,myCalc.divide(-1,0));
-//    }
+        @Test(expected = ArithmeticException.class)
+    public void divideTestNegativeZero(){
+        myCalc.divide(-1,0);
+    }
 
 }
