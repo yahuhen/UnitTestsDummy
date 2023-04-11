@@ -1,0 +1,14 @@
+//body//a/img[@title="Спартак"]
+//body//a/img[@alt="логотип Спартак"]
+
+//body//div[@class="content_menu"]//a/span[text()='Информация для партнеров']
+
+//div[@class="content_menu"]//a[text()='Импрессо']
+//a[text()='Импрессо'][1]
+
+//i[@class="search fa search-btn lupa"]
+//i[contains(@class, 'lupa')]
+
+//span[@class="header__eye"]//img
+//img[@src="/include/eye.svg"]
+
