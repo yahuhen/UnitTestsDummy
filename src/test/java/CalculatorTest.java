@@ -1,15 +1,9 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
-import java.util.stream.Collectors;
-
 public class CalculatorTest {
 
     Calculator calculator = new Calculator();
-
 
     @Test
     public void CalculatorAddTest() {
