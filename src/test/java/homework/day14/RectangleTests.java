@@ -1,3 +1,6 @@
+package homework.day14;
+
+import homework.day14.Rectangle;
 import org.junit.Assert;
 import org.junit.Test;
 

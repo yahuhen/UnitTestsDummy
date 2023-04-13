@@ -1,3 +1,5 @@
+package homework.day14;
+
 public class Rectangle {
 
     double length, width;
