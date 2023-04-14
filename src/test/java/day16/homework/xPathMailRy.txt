@@ -1,0 +1,40 @@
+//div[@class='toolbar__content i-valign-middle']-верхняя шапка
+//img[@class="i-valign-middle"]
+
+//a[@href='//mail.ru']-иконка маил ру
+//div[@class="logo sobpffn__jfdmvf logo_noauth"]
+
+//a[@class='ph-project ph-project__register svelte-1ke9xx5']-регистрация
+//a[contains(text(),"Регистрация")]
+
+//a[@class='ph-project svelte-jq5qv5 ph-project_current']-mail.ru
+//a[contains(text(),'Mail.ru')]
+
+//a[@data-click-counter="374383505, 61021857"]-облако
+//a[contains(text(),'Облако')]
+
+//button[@class='ph-login svelte-1ke9xx5']-войти
+//button[contains(text(),'Войти')]
+
+//button[@class='search-arrow__button']-найти
+//div[@class='search-arrow__button-text']
+
+//a[@data-testid='news-tabs-tab-item-lady'] -леди
+//a[contains(text(),'Леди')]
+
+//a[@data-testid="logged-out-email"]-почта
+//img[@src="//home.imgsmail.ru/resplash/146844/i/icons/05c5eeba456e.svg"]
+
+//a[@href='https://news.mail.ru/politics/55815261/?frommail=1']-первая строка новости
+
+//button[@data-show-counter="84226411"] -ВОЙТИ
+//button[@data-testid='enter-mail-primary']
+
+//a[@href='//account.mail.ru/signup?from=main&rf=auth.mail.ru&app_id_mytracker=58519']-создать почту
+//a[@data-show-counter='84226414']
+
+//a[@data-testid="weather-city"]-погода
+//a[@class="weather__header-link sobpffn__tuw9kl"]
+
+//a[@class="weather__arrow sobpffn__tuw9kl"]-стрелка
+//a[@data-testid="weather-more"]

@@ -1,0 +1,35 @@
+//a[@class='header_logo_img'] - левая иконка спартака
+//img[@alt="логотип Спартак"]
+
+//a[@href='/products/Impresso/'] - импрессо
+
+//span[text()='Информация для партнеров'] - информация для партнёров
+//div[@class="content_menu"]/div/ul[@class="menu full"]/li[3]/a
+
+//i[@class='search fa search-btn lupa'] -лупа
+//div[@class="header__search"]
+
+//a[@href="/products/Impresso/?special_version=Y"] -глаз
+//img[contains(@src,"eye")]
+
+//a[@class='header__lang__item header__lang__item_ru active']-ru
+//a[contains(@class,"ru")]
+
+//a[@href='/cn/'] - ch
+//a[contains(text(),"Ch")]
+
+//a[@href='/upload/Каталог продукции РБ 2022.pdf']-скачать каталог
+//a[@class="download-catalog"]
+
+//li[@class="flex-nav-next"]-стрелка в право
+//a[@class='flex-next']
+
+//img[@src='/bitrix/templates/our_shop/images/youtube.svg']-ютуб
+//a[@href='https://www.youtube.com/channel/UC2xYusMBxs4XkwoPotvTw4A']
+
+//a[@href='https://vk.com/spartakby']-вк
+/bitrix/templates/our_shop/images/VK.svg-вк
+
+//a[@class='flex-active']-нижнии прямоугольники
+//li/a[contains(text(),'2')]
+
