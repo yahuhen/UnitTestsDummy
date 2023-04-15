@@ -1,0 +1,32 @@
+//*[@data-testid="grid-header"]/div[1]/div[1]/div[1]/div[1]/img
+//img[@class="i-valign-middle"]
+
+//*[@data-testid="whiteline"]/div[1]/div[1]/a[1]
+//*[contains(@class,"ph-project svelte-jq5qv5")][1]
+
+//*[@data-testid="whiteline"]/div[1]/div[1]/a[3]
+//*[contains(@class,"ph-project svelte-jq5qv5")][3]
+
+//*[contains(@class,"ph-project ph-project__register")]
+//a[contains(text(),"Регистрация")]
+
+//button[contains(@class,"ph-login ")]
+//*[contains(@class,"ph-auth")]/button
+
+//button[@class="search-arrow__button"]
+//*[@class="search-arrow__border"]/button
+
+//*[contains(@class,"mailbox-services")]/a[1]
+//*[@data-testid="logged-out-email"]
+
+//*[@href="//lady.mail.ru/"]
+//*[@data-testid="news-tabs-tab-item-lady"]
+
+//*[@data-testid="news-content"]/li[2]/div/a
+//li[@data-testid="general-news-item-rb"][2]/div/a
+
+//button[contains(@class,"resplash-btn_primary")]
+//*[@data-testid="enter-mail-primary"]
+
+//a[contains(@class,"resplash-btn_outlined-blue")]
+//a[@data-testid="mailbox-create-link"]

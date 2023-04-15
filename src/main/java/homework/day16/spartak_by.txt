@@ -1,0 +1,35 @@
+//img[@src="/upload/logo.png"]
+//a[@class="header_logo_img"]/img
+
+//ul[@class="menu full"]/li[2]/div[@class="child submenu"]/div/a[@href="/products/Impresso/"]
+//ul[@class="menu full"]//descendant:: a[contains(@href,"/products/Impresso/")]
+
+//div[@class="content_menu"]/div/ul[@class="menu full"]/li[3]/a
+//div[@class="content_menu"]//descendant:: a[contains(@href,"/partners/")]/span
+
+//i[@class="search fa search-btn lupa"]
+//div[@class="header__search"]
+
+//span[@class="header__eye"]
+//img[contains(@src,"eye")]
+
+//div[@class="header__lang"]/a[1]
+//a[contains(@class,"ru")]
+
+//div[@class="header__lang"]/a[4]
+//a[contains(text(),"Ch")]
+
+//a[@class="download-catalog"]
+//div[@class="lang-block"]/a
+
+//a[@class="flex-next"]
+//li[@class="flex-nav-next"]
+
+//li/a[contains(text(),'2')]
+//ol[@class="flex-control-nav flex-control-paging"]/li[2]/a
+
+//div[@class="top_slider_wrapp"]//descendant:: a[contains(@href,'https://vk.com')]
+//div[@class="top_slider_wrapp"]/ul/li[2]/a
+
+//div[@class="top_slider_wrapp"]//descendant:: a[contains(@href,'https://www.youtube.com')]
+//div[@class="top_slider_wrapp"]/ul/li[last()]/a
