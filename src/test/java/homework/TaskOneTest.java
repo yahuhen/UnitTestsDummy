@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 
-public class BookingSearchTest {
+public class TaskOneTest {
     public static void main(String[] args) {
 
         WebDriver driver = new ChromeDriver();
