@@ -9,8 +9,9 @@ import org.openqa.selenium.interactions.Actions;
 public class TaskTwoTest {
     public static void main(String[] args) throws InterruptedException {
 
-        // Открываем браузер и переходим на сайт w3schools.com
         WebDriver driver = new ChromeDriver();
+
+        // Открываем браузер и переходим на сайт w3schools.com
         driver.manage().window().maximize();
         driver.get("https://www.w3schools.com/java/");
 

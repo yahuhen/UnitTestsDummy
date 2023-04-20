@@ -7,13 +7,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TaskThreeTest {
     public static void main(String[] args) throws InterruptedException {
-        // Указываем путь к драйверу браузера
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
 
-        // Создаем экземпляр драйвера
         ChromeDriver driver = new ChromeDriver();
 
         // Переходим на сайт booking.com
+        driver.manage().window().maximize();
         driver.get("https://www.booking.com");
 
         // Находим поле для ввода города и вводим "Москва"
