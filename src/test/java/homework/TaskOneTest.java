@@ -1,11 +1,9 @@
-package day15042023;
+package homework;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -25,9 +23,9 @@ public class TaskOneTest {
         // отелеи в Париже
         WebElement cityField = driver.findElement(By.name("ss"));
         cityField.sendKeys("Париж");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         // календарь
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement dates = driver.findElement(By.xpath("//*[@id=\"indexsearch\"]//button[@data-testid=\"date-display-field-start\"]"));
         dates.click();
 
@@ -51,6 +49,31 @@ public class TaskOneTest {
         driver.findElement(By.xpath("//*[@type='submit']")).click();
 
 
-        
+        // Фильтруем по максимальной стоимости и сортируем по возрастанию цены
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        WebElement priceButton = driver.findElement(By.xpath("//*[@id=':R2hn8cq:']"));
+        priceButton.click();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.findElement(By.xpath("//button[@data-testid='sorters-dropdown-trigger']")).click();
+        driver.findElement(By.xpath("//span[text()='Price (lowest first)']")).click();
+
+
+
+        WebElement cheapestHotelPriceElement = driver.findElement(By.xpath("(//*[@class='bui-price-display__value prco-text-nowrap-helper prco-inline-block-maker-helper'])[1]"));
+        String cheapestHotelPrice = cheapestHotelPriceElement.getText().replaceAll("[^\\d.]+", "");
+        double cheapestPrice = Double.parseDouble(cheapestHotelPrice);
+
+// проверяем, что стоимость ночи самого дешевого отеля больше или равна максимальной стоимости
+        double maxPrice = 1600.0;
+        if (cheapestPrice >= maxPrice) {
+            System.out.println("Success!");
+        } else {
+            System.out.println("Failure!");
+        }
+
+        driver.quit();
+
+
     }
 }
