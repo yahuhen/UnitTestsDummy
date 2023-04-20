@@ -43,29 +43,18 @@ public class TaskOneTest {
         WebElement checkoutDateField = driver.findElement(By.xpath(String.format("//span[@data-date='%s']", checkoutDate.format(dateFormat))));
         checkoutDateField.click();
 
-// выбираем гостей и комнаты
+
+        //номера + люди
         WebElement optionsButton = driver.findElement(By.xpath("//*[@data-testid='occupancy-config']"));
         optionsButton.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
+        WebElement clickElement = driver.findElement(By.xpath("//*[@id='group_adults']/following-sibling::div/button[2]"));
+        clickElement.click();
+        clickElement.click();
+        driver.findElement(By.xpath("//*[@id='no_rooms']/following-sibling::div/button[2]")).click();
 
-        WebElement roomsField = driver.findElement(By.xpath("//label[@id='xp__guests__toggle']"));
-        roomsField.click();
-
-// выбираем 2 комнаты
-        WebElement roomsNumber = driver.findElement(By.xpath("//button[@data-value='2']"));
-        roomsNumber.click();
-
-// выбираем 4 взрослых
-        WebElement adultsField = driver.findElement(By.xpath("//label[@id='xp__guests__inputs-container']/div[1]/div[2]/button[2]"));
-        adultsField.click();
-        adultsField.sendKeys(Keys.ARROW_UP);
-        adultsField.sendKeys(Keys.ARROW_UP);
-        adultsField.sendKeys(Keys.ARROW_UP);
-        adultsField.sendKeys(Keys.ARROW_UP);
-
-// подтверждаем выбор
-        WebElement confirmButton = driver.findElement(By.xpath("//div[@class='sb-group__field sb-group__field-adults']//button[@type='submit']"));
-        confirmButton.click();
-
+        //сабмит
+        driver.findElement(By.xpath("//*[@type='submit']")).click();
     }
 }
