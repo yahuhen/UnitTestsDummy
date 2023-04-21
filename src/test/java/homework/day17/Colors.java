@@ -31,7 +31,7 @@ public class Colors {
     @Test
     public void colorsTest() {
         driver.get("https://booking.com");
-        driver.findElement(By.cssSelector("[aria-label='Скрыть меню входа в аккаунт.']")).click();
+        driver.findElement(By.xpath("//div[@role='dialog'][@aria-modal='true']//button")).click();
         driver.findElement(By.cssSelector("[name='ss']")).sendKeys("Париж");
         driver.findElement(By.xpath("//*[@data-testid='autocomplete-result']/div/div[text()='Париж']")).click();
         driver.findElement(By.cssSelector("[data-date='2023-05-15']")).click();

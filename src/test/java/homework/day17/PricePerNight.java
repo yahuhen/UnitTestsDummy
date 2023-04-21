@@ -43,7 +43,7 @@ public class PricePerNight {
         myCalendar.setTime(new Date());
         myCalendar.add(Calendar.DAY_OF_MONTH, 3);
         driver.get("https://booking.com");
-        driver.findElement(By.cssSelector("[aria-label='Скрыть меню входа в аккаунт.']")).click();
+        driver.findElement(By.xpath("//div[@role='dialog'][@aria-modal='true']//button")).click();
         driver.findElement(By.cssSelector("[name='ss']")).sendKeys("Париж");
         driver.findElement(By.xpath("//*[@data-testid='autocomplete-results']/li[1]/descendant:: div[contains(text(),'Париж')]")).click();
         driver.findElement(By.cssSelector("[data-date='" + needFormat.format(myCalendar.getTime()) + "']")).click();

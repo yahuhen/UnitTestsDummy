@@ -23,7 +23,7 @@ public class Hover {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://booking.com");
-        driver.findElement(By.cssSelector("[aria-label='Скрыть меню входа в аккаунт.']")).click();
+        driver.findElement(By.xpath("//div[@role='dialog'][@aria-modal='true']//button")).click();
     }
 
     @After
