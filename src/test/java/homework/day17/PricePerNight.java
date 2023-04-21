@@ -26,14 +26,14 @@ public class PricePerNight {
     @Before
     public void beforeTests() {
         driver.manage().window().maximize();
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
     }
 
     @After
     public void afterTests() {
-//        driver.quit();
+        driver.quit();
     }
 
     @Test

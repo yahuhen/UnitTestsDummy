@@ -7,10 +7,13 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Tutorial {
     WebDriver driver = new ChromeDriver();
@@ -18,9 +21,9 @@ public class Tutorial {
     @Before
     public void beforeTests() {
         driver.manage().window().maximize();
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     @After
@@ -49,13 +52,19 @@ public class Tutorial {
                 .build()
                 .perform();
         int counter = 0;
-        for (int i = 1; i <= driver.findElements(By.xpath("//*[@id='rso']/div//descendant:: h3")).size() - 1; i++) {
-            if (driver.findElement(By.xpath("//*[@id='rso']/div[" + i + "]//descendant:: h3")).getText().toLowerCase().contains("tutorial")) {
+        List<WebElement> allResults = driver.findElements(By.xpath("//*[@id='rso']/div//descendant:: a[@href]/h3"));
+        List<WebElement> displayedResults = new ArrayList<>();
+        for (WebElement item : allResults) {
+            if (item.isDisplayed()) {
+                displayedResults.add(item);
+            }
+        }
+        for (WebElement item : displayedResults) {
+            if (item.getText().toLowerCase().contains("tutorial")) {
                 counter++;
             }
         }
-        Assert.assertEquals("Some links don't contain the 'Tutorial' word",
-                driver.findElements(By.xpath("//*[@id='rso']/div//descendant:: h3")).size() - 1, counter);
+        Assert.assertEquals("Some links don't contain the 'Tutorial' word", displayedResults.size(), counter);
     }
 
 }
