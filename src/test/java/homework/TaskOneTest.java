@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -50,9 +53,17 @@ public class TaskOneTest {
 
 
         // Фильтруем по максимальной стоимости и сортируем по возрастанию цены
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        WebElement priceButton = driver.findElement(By.xpath("//*[@id=':R2hn8cq:']"));
-        priceButton.click();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//        WebElement priceButton = driver.findElement(By.xpath("//*[@id=':R2hn8cq:']"));
+//        priceButton.click();
+
+        // если ползунок
+        WebElement rangeInput = driver.findElement(By.xpath("//*[contains(@id,'filter_group_price_')]//input[@type=\"range\"]"));
+        Actions move = new Actions(driver);
+        move.dragAndDropBy(rangeInput, 100, 0).perform();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.attributeToBe(rangeInput, "value", "25"));
+
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath("//button[@data-testid='sorters-dropdown-trigger']")).click();
@@ -64,7 +75,7 @@ public class TaskOneTest {
         String cheapestHotelPrice = cheapestHotelPriceElement.getText().replaceAll("[^\\d.]+", "");
         double cheapestPrice = Double.parseDouble(cheapestHotelPrice);
 
-// проверяем, что стоимость ночи самого дешевого отеля больше или равна максимальной стоимости
+// проверяем, что стоимость ночи самого дешевого отеля на странице больше или равна 1600 злотых
         double maxPrice = 1600.0;
         if (cheapestPrice >= maxPrice) {
             System.out.println("Success!");
@@ -73,7 +84,6 @@ public class TaskOneTest {
         }
 
         driver.quit();
-
 
     }
 }
