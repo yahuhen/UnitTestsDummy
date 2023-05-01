@@ -1,3 +1,5 @@
+package homework.day12;
+
 import org.junit.Assert;
 import org.junit.Test;
 
