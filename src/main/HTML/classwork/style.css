@@ -1,0 +1,14 @@
+H1 {
+color: #333366; 
+font-size: 200%;
+font-family: Arial, Verdana, sans-serif; 
+text-align: center;
+}
+H2 {
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333366;
+    }
+p{
+padding-left: 20px;
+}
