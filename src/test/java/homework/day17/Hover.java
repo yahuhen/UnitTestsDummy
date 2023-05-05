@@ -1,27 +1,23 @@
 package homework.day17;
 
+import homework.at_project.driver.Driver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 
-import java.time.Duration;
 
 public class Hover {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = Driver.getWebDriver();
     Actions actions = new Actions(driver);
 
     @Before
     public void beforeTests() {
-        driver.manage().window().maximize();
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Driver.setTimeOuts(10, 10, 10);
         driver.get("https://booking.com");
         driver.findElement(By.xpath("//div[@role='dialog'][@aria-modal='true']//button")).click();
     }

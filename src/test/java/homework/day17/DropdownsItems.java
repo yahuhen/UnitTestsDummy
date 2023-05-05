@@ -1,25 +1,23 @@
 package homework.day17;
 
+import homework.at_project.driver.Driver;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
 public class DropdownsItems {
 
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver = Driver.getWebDriver();
+
 
     @Before
     public void beforeTests() {
-        driver.manage().window().maximize();
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Driver.setTimeOuts(10,10,10);
     }
 
     @After
