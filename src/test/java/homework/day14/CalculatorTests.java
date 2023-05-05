@@ -1,6 +1,5 @@
 package homework.day14;
 
-import homework.day14.Calculator;
 import org.junit.Assert;
 import org.junit.Test;
 
