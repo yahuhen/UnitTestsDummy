@@ -1,5 +1,6 @@
 package homework.day14;
 
+import classwork.day15.Driver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,7 +19,8 @@ public class BookingTest0 {
 
     @Before
     public void setUp() {
-        WebDriver driver = new ChromeDriver();
+        //WebDriver driver = new ChromeDriver();
+        WebDriver driver = Driver.WebDriver();
         driver.manage().window().maximize();
         driver.get("https://www.booking.com/");
     }
