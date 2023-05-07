@@ -1,5 +1,6 @@
-public class Rectangle {
+package classwork.day12;
 
+public class Rectangle {
     double length, width;
 
     public Rectangle(double length, double width) {
@@ -23,7 +24,7 @@ public class Rectangle {
         this.width = width;
     }
 
-    public double getArea(){
+    public double getArea() {
         return this.length * this.width;
     }
 }
