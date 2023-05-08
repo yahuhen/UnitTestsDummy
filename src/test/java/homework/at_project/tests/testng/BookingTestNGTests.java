@@ -19,11 +19,11 @@ public class BookingTestNGTests {
     DateUtil date = new DateUtil();
     ActionsUtil actions = new ActionsUtil();
 
-    @BeforeTest
+    @BeforeMethod
     public void beforeTests() {
         Driver.getWebDriver();
     }
-    @AfterTest
+    @AfterMethod
     public void afterTests() {
         Driver.closeDriver();
     }
