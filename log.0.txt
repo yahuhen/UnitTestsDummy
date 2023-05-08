@@ -1,5 +1,0 @@
-мая 06, 2023 2:49:25 pm classwork.day20.DefaultLogging main SEVERE: Сообщение с уровнем SEVERE
-мая 06, 2023 2:49:25 pm classwork.day20.DefaultLogging main WARNING: Сообщение с уровнем WARNING
-мая 06, 2023 2:49:25 pm classwork.day20.DefaultLogging main INFO: Сообщение с уровнем INFO
-мая 06, 2023 2:49:25 pm classwork.day20.DefaultLogging main CONFIG: Сообщение с уровнем CONFIG
-мая 06, 2023 2:49:25 pm classwork.day20.DefaultLogging main FINE: Сообщение с уровнем FINE
