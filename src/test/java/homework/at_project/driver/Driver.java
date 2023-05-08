@@ -17,8 +17,8 @@ public class Driver {
     public static WebDriver getWebDriver() {
         if (webDriver == null) {
             webDriver = DriverManager.getDriver(config);
-            setTimeOuts(10, 10, 10);
         }
+        setTimeOuts(10, 10, 10);
         return webDriver;
     }
     public static void closeDriver() {
