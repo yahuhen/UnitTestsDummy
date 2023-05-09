@@ -31,7 +31,7 @@ public class HomePage {
         driver.findElement(By.cssSelector("[name='ss']")).sendKeys(placeName);
         LOGGER.trace("Enter the city name, locator = '[name='ss']'");
         driver.findElement(By.xpath("//*[@data-testid='autocomplete-results']/li[1]/descendant:: div[contains(text(),'" + placeName + "')]")).click();
-        LOGGER.trace("Click on the city, locator = '//*[@data-testid='autocomplete-results']/li[1]/descendant:: div[contains(text(),'"+placeName+"')]'");
+        LOGGER.trace("Click on the city, locator = '//*[@data-testid='autocomplete-results']/li[1]/descendant:: div[contains(text(),'" + placeName + "')]'");
     }
 
     public void selectingDate(String date) {

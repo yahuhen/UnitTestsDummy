@@ -22,16 +22,17 @@ public class W3SchoolsTests {
 
 
     @Before
-    public void beforeTests(){
+    public void beforeTests() {
         Driver.getWebDriver();
         LOGGER.info("The w3schools junit test is started");
     }
 
     @After
-    public void afterTests(){
+    public void afterTests() {
         Driver.closeDriver();
         LOGGER.info("The w3schools junit test is finished");
     }
+
     @Test
     public void tutorialTest() {
         w3schools.getJavaUrl();

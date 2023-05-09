@@ -120,19 +120,19 @@ public class BookingSteps {
 
     @When("I scroll to the {int}th hotel")
     public void scrollToHotel(int hotel) {
-        bookingResultsPage.scrollToElement(bookingResultsPage.findHotel(hotel));
+        actions.scrollToElement(bookingResultsPage.findHotel(hotel));
         LOGGER.debug("Step 'I scroll to the {int}th hotel' is executed");
     }
 
     @When("I change the {int}th hotel's background")
     public void changeHotelBackground(int hotel) {
-        bookingResultsPage.changeElementBackground(bookingResultsPage.findHotel(hotel));
+        actions.changeElementBackground(bookingResultsPage.findHotel(hotel));
         LOGGER.debug("Step 'I change the {int}th hotel's background' is executed");
     }
 
     @When("I change the {int}th hotel's title color")
     public void changeHotelTextColor(int hotel) {
-        bookingResultsPage.changeElementTextColor(bookingResultsPage.findHotelTitle(hotel));
+        actions.changeElementTextColor(bookingResultsPage.findHotelTitle(hotel));
         LOGGER.debug("Step 'I change the {int}th hotel's title color' is executed");
     }
 
