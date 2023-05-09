@@ -1,6 +1,7 @@
 package homework.at_project.pages.tempmail_pages;
 
 import homework.at_project.driver.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +12,8 @@ import java.time.Duration;
 public class MainPage {
 
     WebDriver driver = Driver.getWebDriver();
+
+    public static final Logger LOGGER = Logger.getLogger(MainPage.class.getName());
 
     public void getUrl() {
         driver.get("https://temp-mail.org/ru/");

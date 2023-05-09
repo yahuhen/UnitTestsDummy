@@ -4,6 +4,7 @@ import homework.at_project.driver.Driver;
 import homework.at_project.pages.google_pages.MainPage;
 import homework.at_project.pages.www_w3schools_pages.Java;
 import homework.at_project.utils.ActionsUtil;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,15 +17,19 @@ public class W3SchoolsTestNGTests {
     ActionsUtil actions = new ActionsUtil();
     MainPage google = new MainPage();
 
+    public static final Logger LOGGER = Logger.getLogger(W3SchoolsTestNGTests.class.getName());
+
 
     @BeforeTest
     public void beforeTests() {
         Driver.getWebDriver();
+        LOGGER.info("The w3schools testNG test is started");
     }
 
     @AfterTest
     public void afterTests() {
         Driver.closeDriver();
+        LOGGER.info("The w3schools testNG test is finished");
     }
 
     @Test
@@ -34,6 +39,7 @@ public class W3SchoolsTestNGTests {
         google.getUrl();
         actions.selectingPasteElement(google.findSearchField());
         Assert.assertEquals(google.displayedResultsCountContainsTutorial(), google.displayedResultsCount().size(), "Some links don't contain the 'Tutorial' word");
+        LOGGER.debug("Test 'tutorialTest' is executed");
     }
 
 }
