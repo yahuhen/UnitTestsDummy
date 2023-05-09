@@ -63,9 +63,9 @@ public class BookingTests {
         bookingHomePage.selectingDate(date.setDay(3));
         bookingHomePage.selectingDate(date.setDay(10));
         bookingHomePage.clickOnTheSubmit();
-        bookingResultsPage.scrollToElement(bookingResultsPage.findHotel(10));
-        bookingResultsPage.changeElementBackground(bookingResultsPage.findHotel(10));
-        bookingResultsPage.changeElementTextColor(bookingResultsPage.findHotelTitle(10));
+        actions.scrollToElement(bookingResultsPage.findHotel(10));
+        actions.changeElementBackground(bookingResultsPage.findHotel(10));
+        actions.changeElementTextColor(bookingResultsPage.findHotelTitle(10));
         Assert.assertEquals("The text color isn't red", "color: red;", bookingResultsPage.findHotelTitle(10).getAttribute("style"));
         LOGGER.debug("Test 'colorsTest' is executed");
     }

@@ -22,7 +22,7 @@ public class ResultsPage {
     public void clickOnTheMaxPricePerNight() {
         try {
             driver.findElement(By.xpath(String.format(MAX_PRICE_PER_NIGHT_XPATH_FLAG, "span[2]"))).click();
-            LOGGER.trace("Click on the max price per night in the filters, locator = '"+String.format(MAX_PRICE_PER_NIGHT_XPATH_FLAG, "span[2]")+"'");
+            LOGGER.trace("Click on the max price per night in the filters, locator = '" + String.format(MAX_PRICE_PER_NIGHT_XPATH_FLAG, "span[2]") + "'");
         } catch (NoSuchElementException e) {
             Actions make = new Actions(driver);
             make
@@ -31,7 +31,7 @@ public class ResultsPage {
                     .release()
                     .build()
                     .perform();
-            LOGGER.trace("Set the max price per night in the filters, locator = '"+String.format(MAX_PRICE_PER_NIGHT_XPATH_SCROLL, "div[1]")+"'");
+            LOGGER.trace("Set the max price per night in the filters, locator = '" + String.format(MAX_PRICE_PER_NIGHT_XPATH_SCROLL, "div[1]") + "'");
         }
     }
 
@@ -64,9 +64,10 @@ public class ResultsPage {
         Assert.assertTrue("The price per night is more than filter price", hotelPricePerNight >= filterPricePerNight);
         LOGGER.trace("Check the hotel price per night and the filters price per night,\n" +
                 " locator (hotel price per night) = '//*[@data-block-id='hotel_list']//descendant::div[@data-testid='property-card'][1]//descendant::span[@data-testid='price-and-discounted-price']'\n" +
-                " locator (filters price per night) = '"+String.format(MAX_PRICE_PER_NIGHT_XPATH_FLAG, "div[@data-testid='filters-group-label-content']")+"' \n" +
-                " or '"+String.format(MAX_PRICE_PER_NIGHT_XPATH_SCROLL, "input[1]")+"'");
+                " locator (filters price per night) = '" + String.format(MAX_PRICE_PER_NIGHT_XPATH_FLAG, "div[@data-testid='filters-group-label-content']") + "' \n" +
+                " or '" + String.format(MAX_PRICE_PER_NIGHT_XPATH_SCROLL, "input[1]") + "'");
     }
+
     public void assertPricePerNightTestNG() {
         int hotelPricePerNight = Integer.parseInt(driver.findElement(By.xpath("//*[@data-block-id='hotel_list']//descendant::div[@data-testid='property-card'][1]//descendant::span[@data-testid='price-and-discounted-price']")).getText().replaceAll("[^0-9]", "")) / 7;
         int filterPricePerNight;
@@ -75,11 +76,11 @@ public class ResultsPage {
         } catch (NoSuchElementException e) {
             filterPricePerNight = Integer.parseInt(driver.findElement(By.xpath(String.format(MAX_PRICE_PER_NIGHT_XPATH_SCROLL, "input[1]"))).getAttribute("value"));
         }
-        org.testng.Assert.assertTrue(hotelPricePerNight >= filterPricePerNight,"The price per night is more than filter price" );
+        org.testng.Assert.assertTrue(hotelPricePerNight >= filterPricePerNight, "The price per night is more than filter price");
         LOGGER.trace("Check the hotel price per night and the filters price per night,\n" +
                 " locator (hotel price per night) = '//*[@data-block-id='hotel_list']//descendant::div[@data-testid='property-card'][1]//descendant::span[@data-testid='price-and-discounted-price']'\n" +
-                " locator (filters price per night) = '"+String.format(MAX_PRICE_PER_NIGHT_XPATH_FLAG, "div[@data-testid='filters-group-label-content']")+"' \n" +
-                " or '"+String.format(MAX_PRICE_PER_NIGHT_XPATH_SCROLL, "input[1]")+"'");
+                " locator (filters price per night) = '" + String.format(MAX_PRICE_PER_NIGHT_XPATH_FLAG, "div[@data-testid='filters-group-label-content']") + "' \n" +
+                " or '" + String.format(MAX_PRICE_PER_NIGHT_XPATH_SCROLL, "input[1]") + "'");
     }
 
     public List<WebElement> findHotels() {
@@ -88,46 +89,28 @@ public class ResultsPage {
     }
 
     public WebElement findHotel(int numberOfHotel) {
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
+        LOGGER.trace("Find the " + numberOfHotel + "hotel, locator = '//*[@data-testid='property-card'][" + numberOfHotel + "]'");
         return driver.findElement(By.xpath("//*[@data-testid='property-card'][" + numberOfHotel + "]"));
     }
 
     public WebElement findHotelTitle(int numberOfHotel) {
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
+        LOGGER.trace("Find the " + numberOfHotel + "hotel title, locator = '//*[@data-testid='property-card'][" + numberOfHotel + "]//descendant:: div[@data-testid='title']'");
         return driver.findElement(By.xpath("//*[@data-testid='property-card'][" + numberOfHotel + "]//descendant:: div[@data-testid='title']"));
-    }
-
-    public void scrollToElement(WebElement webElement) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)",
-                webElement);
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
-    }
-
-    public void changeElementBackground(WebElement webElement) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].style.backgroundColor='green'",
-                webElement);
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
-    }
-
-    public void changeElementTextColor(WebElement webElement) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].style.color='red'",
-                webElement);
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
     }
 
     public void clickOnTheMaxRating() {
         driver.findElement(By.xpath("//div[@id='left']//div[@data-filters-group='review_score']/div[@data-filters-item='review_score:review_score=90']/label/span[2]")).click();
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
+        LOGGER.trace("Click on the max rating in the filters, locator = '//div[@id='left']//div[@data-filters-group='review_score']/div[@data-filters-item='review_score:review_score=90']/label/span[2]'");
     }
 
     public int getNumberOfMaxRating() {
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
+        LOGGER.trace("Get value of the max rating in the filters, locator = '//div[@id='left']//div[@data-filters-group='review_score']/div[@data-filters-item='review_score:review_score=90']/label//div[@data-testid='filters-group-label-content']'");
         return Integer.parseInt(driver.findElement(By.xpath("//div[@id='left']//div[@data-filters-group='review_score']/div[@data-filters-item='review_score:review_score=90']/label//div[@data-testid='filters-group-label-content']")).getText().replaceAll("[^0-9]", ""));
     }
 
     public void openFirstHotelUrl() {
         driver.get(driver.findElement(By.xpath("//*[@id='search_results_table']//div[@data-testid='property-card'][1]//div[@data-testid='title']/..")).getAttribute("href"));
-        LOGGER.trace("Find the hotel rating value, locator = '//*[@data-testid='review-score-right-component']/div[1]'");
+        LOGGER.trace("Open the first hotetl url, locator = '//*[@id='search_results_table']//div[@data-testid='property-card'][1]//div[@data-testid='title']/..'");
     }
 
 }

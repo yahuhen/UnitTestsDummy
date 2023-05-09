@@ -17,6 +17,7 @@ public class MainPage {
 
     public void getUrl() {
         driver.get("https://temp-mail.org/ru/");
+        LOGGER.trace("Open the https://temp-mail.org/ru/");
     }
 
     public void getEmail() {
@@ -25,6 +26,7 @@ public class MainPage {
                 ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='emailbox-input opentip']"))
         );
         driver.findElement(By.xpath("//button[@class='btn-rds icon-btn bg-theme click-to-copy copyIconGreenBtn']")).click();
+        LOGGER.trace("Click on the 'Copy email' button, locator = '//button[@class='btn-rds icon-btn bg-theme click-to-copy copyIconGreenBtn']'");
     }
 
 }

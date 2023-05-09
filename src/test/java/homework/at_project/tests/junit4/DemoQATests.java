@@ -16,16 +16,17 @@ public class DemoQATests {
     public static final Logger LOGGER = Logger.getLogger(DemoQATests.class.getName());
 
     @Before
-    public void beforeTests(){
+    public void beforeTests() {
         Driver.getWebDriver();
         LOGGER.info("The demoQA junit test is started");
     }
 
     @After
-    public void afterTests(){
+    public void afterTests() {
         Driver.closeDriver();
         LOGGER.info("The demoQA junit test is finished");
     }
+
     @Test
     public void selectTest() {
         selectMenu.getUrlToSelectMenu();
