@@ -7,12 +7,13 @@ import org.testng.xml.internal.Parser;
 import java.io.IOException;
 import java.util.List;
 
-public class TestNGXmlSuiteRunner {
+
+public class TestNGYamlRunner {
 
     public static void main(String[] args) throws IOException {
         final TestNG testNg = new TestNG(true);
         final Parser parser = new Parser(
-                "src/test/resources/testng/testng.xml"
+                "src/test/resources/testng/testng.yaml"
         );
         final List<XmlSuite> suites = parser.parseToList();
         testNg.setXmlSuites(suites);
