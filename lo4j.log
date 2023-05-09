@@ -1,0 +1,5 @@
+
+13:04:35,362  INFO main BookingTests:beforeTests:29 - The booking junit test is started
+13:04:42,029  INFO main BookingTests:afterTests:35 - The booking junit test is finished
+13:04:54,039  INFO main BookingTests:beforeTests:29 - The booking junit test is started
+13:05:00,611  INFO main BookingTests:afterTests:35 - The booking junit test is finished

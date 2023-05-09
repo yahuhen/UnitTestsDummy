@@ -1,6 +1,7 @@
 package homework.at_project.pages.www_w3schools_pages;
 
 import homework.at_project.driver.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebElement;
 public class Java {
 
     WebDriver driver = Driver.getWebDriver();
+
+    public static final Logger LOGGER = Logger.getLogger(Java.class.getName());
 
     public void getJavaUrl() {
         driver.get("https://www.w3schools.com/java/");

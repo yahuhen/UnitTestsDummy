@@ -4,6 +4,7 @@ package homework.at_project.tests.junit4;
 import homework.at_project.driver.Driver;
 import homework.at_project.pages.google_pages.MainPage;
 import homework.at_project.pages.www_w3schools_pages.Java;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,15 +18,19 @@ public class W3SchoolsTests {
     ActionsUtil actions = new ActionsUtil();
     MainPage google = new MainPage();
 
+    public static final Logger LOGGER = Logger.getLogger(W3SchoolsTests.class.getName());
+
 
     @Before
     public void beforeTests(){
         Driver.getWebDriver();
+        LOGGER.info("The w3schools junit test is started");
     }
 
     @After
     public void afterTests(){
         Driver.closeDriver();
+        LOGGER.info("The w3schools junit test is finished");
     }
     @Test
     public void tutorialTest() {
@@ -35,6 +40,7 @@ public class W3SchoolsTests {
         actions.selectingPasteElement(google.findSearchField());
         Assert.assertEquals("Some links don't contain the 'Tutorial' word", google.displayedResultsCount().size(),
                 google.displayedResultsCountContainsTutorial());
+        LOGGER.debug("Test 'tutorialTest' is executed");
     }
 
 }

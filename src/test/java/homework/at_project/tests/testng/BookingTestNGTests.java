@@ -6,6 +6,7 @@ import homework.at_project.pages.booking_pages.HotelPage;
 import homework.at_project.pages.booking_pages.ResultsPage;
 import homework.at_project.utils.ActionsUtil;
 import homework.at_project.utils.DateUtil;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -19,13 +20,17 @@ public class BookingTestNGTests {
     DateUtil date = new DateUtil();
     ActionsUtil actions = new ActionsUtil();
 
+    public static final Logger LOGGER = Logger.getLogger(BookingTestNGTests.class.getName());
+
     @BeforeMethod
     public void beforeTests() {
         Driver.getWebDriver();
+        LOGGER.info("The booking testNG test is started");
     }
     @AfterMethod
     public void afterTests() {
         Driver.closeDriver();
+        LOGGER.info("The booking testNG test is finished");
     }
 
     @Test
@@ -45,6 +50,7 @@ public class BookingTestNGTests {
         bookingResultsPage.clickOnTheSortDropdown();
         bookingResultsPage.clickOnThePriceSorting();
         bookingResultsPage.assertPricePerNightTestNG();
+        LOGGER.debug("Test 'pricePerNightTest' is executed");
     }
 
     @Test
@@ -59,6 +65,7 @@ public class BookingTestNGTests {
         bookingResultsPage.changeElementBackground(bookingResultsPage.findHotel(10));
         bookingResultsPage.changeElementTextColor(bookingResultsPage.findHotelTitle(10));
         Assert.assertEquals(bookingResultsPage.findHotelTitle(10).getAttribute("style"), "color: red;", "The text color isn't red");
+        LOGGER.debug("Test 'colorsTest' is executed");
     }
 
     @Test
@@ -70,6 +77,7 @@ public class BookingTestNGTests {
         bookingHomePage.selectingDate(date.setDay(10));
         bookingHomePage.clickOnTheSubmit();
         Assert.assertTrue(bookingResultsPage.findHotels().size() > 0, "There are no hotels");
+        LOGGER.debug("Test 'hotelAvailabilityTest' is executed");
     }
 
     @Test
@@ -85,6 +93,7 @@ public class BookingTestNGTests {
         int rating = bookingResultsPage.getNumberOfMaxRating();
         bookingResultsPage.openFirstHotelUrl();
         Assert.assertTrue(bookingHotelPage.getNumberOfHotelRating() >= rating, "The hotel rating is less than 9");
+        LOGGER.debug("Test 'hotelRatingTest' is executed");
     }
 
     @Test
@@ -94,6 +103,7 @@ public class BookingTestNGTests {
         actions.hoverElement(bookingHomePage.findCurrency());
         String tooltip = bookingHomePage.getCurrencyTooltip();
         Assert.assertEquals(tooltip, "Выберите валюту", "There is an incorrect tooltip");
+        LOGGER.debug("Test 'currencyTest' is executed");
     }
 
     @Test
@@ -103,6 +113,7 @@ public class BookingTestNGTests {
         actions.hoverElement(bookingHomePage.findLanguage());
         String tooltip = bookingHomePage.getLanguageTooltip();
         Assert.assertEquals(tooltip, "Выберите язык", "There is an incorrect tooltip");
+        LOGGER.debug("Test 'languageTest' is executed");
     }
 
 }

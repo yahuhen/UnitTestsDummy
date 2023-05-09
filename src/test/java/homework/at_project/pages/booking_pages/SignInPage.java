@@ -1,6 +1,7 @@
 package homework.at_project.pages.booking_pages;
 
 import homework.at_project.driver.Driver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebElement;
 public class SignInPage {
 
     WebDriver driver = Driver.getWebDriver();
+
+    public static final Logger LOGGER = Logger.getLogger(SignInPage.class.getName());
 
     public void enterEmail(String myEmail) {
         driver.findElement(By.id("username")).sendKeys(myEmail);
