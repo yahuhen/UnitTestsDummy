@@ -1,4 +1,7 @@
 public class EvenOddChecker {
+    public static void main(String[] args) {
+        check(5);
+    }
 
     public static boolean check(int num) {
 
