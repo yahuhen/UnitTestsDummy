@@ -24,7 +24,7 @@ public class CalcTest {
     public void testMultiply() {
         Calculator calculator = new Calculator();
         assertEquals(6, calculator.multiply(2, 3));
-        assertEquals(-2, calculator.multiply(-2, 1));
+        assertEquals(-2, calculator.multiply(-2, 1));;k
         assertEquals(4, calculator.multiply(-2, -2));
     }
 
